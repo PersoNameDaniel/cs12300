@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class stars {
     public static void main (String[] args) {
 
         int rows = 100000;

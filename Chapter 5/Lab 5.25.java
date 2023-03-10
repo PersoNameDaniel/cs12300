@@ -4,9 +4,9 @@ public class Main {
    public static void main(String[] args) {
       Scanner scnr = new Scanner(System.in);
 
-      System.out.print("Enter a line of text: ");
-      String input = scnr.nextLine();
-
+      if (scnr.hasNextLine()) {
+        String input = scnr.nextLine();
+      
       int wordCount = 0;
       boolean inWord = false;
 
@@ -22,6 +22,10 @@ public class Main {
          }
       }
 
-      System.out.println("Number of words: " + wordCount);
+      System.out.println(/*"Number of words: " + */wordCount);
    }
+   else {
+    System.out.println("0");
+   }
+}
 }
