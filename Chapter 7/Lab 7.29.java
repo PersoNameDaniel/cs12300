@@ -1,6 +1,16 @@
 import java.util.Scanner;
 
 public class LabProgram {
+    public static int getWordFrequency(String[] wordsList, int listSize, String currWord) {
+        int frequency = 0;
+        for (int i = 0; i < listSize; i++) {
+            if (wordsList[i].equalsIgnoreCase(currWord)) {
+                frequency++;
+            }
+        }
+        return frequency;
+    }
+    
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
         
@@ -16,19 +26,15 @@ public class LabProgram {
             words[i] = scnr.next();
         }
 
-        for (int i=0; i<numWords; i++) {
-            for (int j=0; j<numWords; j++) {
-                if (words[i].equals(words[j])) {
-                    ++frequencies[i];
-                }
-            }
-        }
-        
-        // Print the words and their frequencies
         for (int i = 0; i < numWords; i++) {
+            // If the word has already been processed, skip it
             if (frequencies[i] > 0) {
-                System.out.println(words[i] + " - " + frequencies[i]);
+                continue;
             }
+            String currWord = words[i];
+            int currFrequency = getWordFrequency(words, numWords, currWord);
+            frequencies[i] = currFrequency;
+            System.out.println(currWord + " " + currFrequency);
         }
     }
 }
