@@ -6,44 +6,39 @@ import javax.naming.ldap.SortControl;
 public class LabProgram {
    
     public static void ascend3(int[] originalArray) {
-        int[] sortedArray = new int[3];
-        int largestPos = -99;
-        int smallestPos = -99;
+    int[] sortedArray = new int[3];
+    int largestPos = 0;
+    int smallestPos = 0;
 
-        //finding largest number
-        for (int i=0; i<2; i++) {
-            if (originalArray[i] > originalArray[i+1]) {
-                sortedArray[2] = originalArray[i];
-                largestPos = i;
-            }
-            else sortedArray[2] = originalArray[2];
-            largestPos = 2;
+    //finding largest number and its position
+    for (int i=1; i<3; i++) {
+        if (originalArray[i] > originalArray[largestPos]) {
+            largestPos = i;
         }
+    }
+    sortedArray[2] = originalArray[largestPos];
 
-        //finding smallest number
-        for (int i=0; i<2; i++) {
-            if (originalArray[i] < originalArray[i+1]) {
-                sortedArray[0] = originalArray[i];
-                smallestPos = i;
-            }
-            else sortedArray[0] = originalArray[2];
-            smallestPos = 2;
+    //finding smallest number and its position
+    for (int i=1; i<3; i++) {
+        if (originalArray[i] < originalArray[smallestPos]) {
+            smallestPos = i;
         }
+    }
+    sortedArray[0] = originalArray[smallestPos];
 
-        //setting middle number
-        for (int i=0; i<2; i++) {
-            if ((i == smallestPos) || (i == largestPos)) {
-                continue;
-            }
-            else {
-                sortedArray[1] = originalArray[i];
-            }
-        }
+    //setting middle number
+    if (largestPos != 0 && smallestPos != 0) {
+        sortedArray[1] = originalArray[0];
+    } else if (largestPos != 1 && smallestPos != 1) {
+        sortedArray[1] = originalArray[1];
+    } else {
+        sortedArray[1] = originalArray[2];
+    }
 
-        for (int i=0; i<3; i++) {
-            originalArray[i] = sortedArray[i];
-        }
-   }
+    for (int i=0; i<3; i++) {
+        originalArray[i] = sortedArray[i];
+    }
+}
    
    public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in); 
