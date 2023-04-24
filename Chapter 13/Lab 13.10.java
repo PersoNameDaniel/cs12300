@@ -30,12 +30,12 @@ public class LabProgram {
             max = val3;
          }
          
-         System.out.println(count + " input(s) read:");
-         System.out.println("Max is " + max);
+         //System.out.println(count + " input(s) read:");
+         System.out.println(max);
       }
       catch (NoSuchElementException e) {
          if (count == 0) {
-            System.out.println(count + " input(s) read:");
+            System.out.println("0 input(s) read:");
             System.out.println("No max");
          }
          else {
