@@ -15,15 +15,7 @@ public class Lab {
       thirdDriverMinutes = distance(userX, userY, thirdDriverX, thirdDriverY);
 
       // finding closest driver
-      if ((firstDriverMinutes < secondDriverMinutes) && (firstDriverMinutes < thirdDriverMinutes)) {
-         return firstDriverMinutes;
-      }
-      else if (secondDriverMinutes < thirdDriverMinutes) {
-         return secondDriverMinutes;
-      }
-      else {
-         return thirdDriverMinutes;
-      }
+      return smallestDistance(firstDriverMinutes, secondDriverMinutes, thirdDriverMinutes);
    } 
 
    public static int distance(int x1, int y1, int x2, int y2) {
@@ -32,6 +24,18 @@ public class Lab {
       distanceBetweenPoints = ((Math.abs(x1 - x2)) + (Math.abs(y1 - y2)));
 
       return distanceBetweenPoints;
+   }
+
+   public static int smallestDistance(int firstValue, int secondValue, int thirdValue) {
+      if ((firstValue < secondValue) && (firstValue < thirdValue)) {
+         return firstValue;
+      }
+      else if (secondValue < thirdValue) {
+         return secondValue;
+      }
+      else {
+         return thirdValue;
+      }
    }
    
    public static void main(String[] args) {
