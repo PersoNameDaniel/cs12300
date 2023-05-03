@@ -10,20 +10,23 @@ public class LabProgram {
       int thirdDriverMinutes;
 
       // getting distances of drivers
-      firstDriverMinutes = distance(userX, userY, firstDriverX, firstDriverY);
-      secondDriverMinutes = distance(userX, userY, secondDriverX, secondDriverY);
-      thirdDriverMinutes = distance(userX, userY, thirdDriverX, thirdDriverY);
+      firstDriverMinutes = driveTime(userX, userY, firstDriverX, firstDriverY);
+      secondDriverMinutes = driveTime(userX, userY, secondDriverX, secondDriverY);
+      thirdDriverMinutes = driveTime(userX, userY, thirdDriverX, thirdDriverY);
 
       // finding closest driver
       return smallestDistance(firstDriverMinutes, secondDriverMinutes, thirdDriverMinutes);
    } 
 
-   public static int distance(int x1, int y1, int x2, int y2) {
+   public static int driveTime(int x1, int y1, int x2, int y2) {
       int distanceBetweenPoints;
+      int timeToDrive;
 
       distanceBetweenPoints = ((Math.abs(x1 - x2)) + (Math.abs(y1 - y2)));
 
-      return distanceBetweenPoints;
+      timeToDrive = distanceBetweenPoints * 2;
+
+      return timeToDrive;
    }
 
    public static int smallestDistance(int firstValue, int secondValue, int thirdValue) {
