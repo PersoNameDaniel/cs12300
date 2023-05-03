@@ -1,7 +1,7 @@
 import java.util.Scanner; 
 import java.lang.Math;
 
-public class Lab {
+public class LabProgram {
    // All x, y, coordinates are in miles from the origin 0, 0. 
    public static int pickupMinutes(int userX, int userY, int firstDriverX, int firstDriverY, int secondDriverX, int secondDriverY, int thirdDriverX, int thirdDriverY) { 
       
